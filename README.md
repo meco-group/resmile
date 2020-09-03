@@ -2,37 +2,36 @@
 
 A toolbox for LPV system indentification using the Regularized State-space Model Interpolation of Local Estimates (ReSMILE) method.
 
-## Installing & requirements
+## Requirements
 
 - MathWorks MATLAB (Tested versions: R2019b on GNU/Linux, R2020a on Windows 10)
 - MathWorks Control System Toolbox for MATLAB
 - [OptiSpline release v0.1](https://github.com/meco-group/optispline/releases/tag/v0.1) package contains both OptiSpline and CasADi, and is used to formulate and solve optimization problems involving B-splines
 - [YALMIP R20200116](https://github.com/yalmip/YALMIP/releases/tag/R20200116) is used by OptiSpline to parse optimization problems involving B-splines
 - [Mosek 8.0.0.60](https://www.mosek.com/downloads/8.0.0.60/) is used as the solver for SOCP problems
-- [LC Toolbox](https://github.com/meco-group/lc_toolbox), commit `778d5c604909ccb98f245ed5c619e73971d9205a` (optional but recommended) can be used to work with the results of the ReSMILE, contains LPV control design routines
+- (optional) [LC Toolbox](https://github.com/meco-group/lc_toolbox) can be used to work with the results of the ReSMILE, contains LPV control design routines. It contains the `resmile` repo as a Git submodule.
 
-From the root of the repo / release ZIP file, you need to add the following directories to path (or run `resmile_mkpath.m` to do it):
+## How to set up
 
-```
-addpath('.','examples','lib','datasets')
-```
+Download all prerequisites and unpack them to a folder.  
+It is recommended to get the ReSMILE as part of the LC Toolbox:
 
-Download all prerequisites to a folder, and also clone this repo into it.  
+    git clone https://github.com/meco-group/lc_toolbox
+    git submodule update --init --recursive
+
 A script that you can use to add prequisites to path and check that they work:
 
-```matlab
+```m
 addpath(genpath('yalmip'))                          % Add YALMIP to path
 addpath('C:\Program Files\Mosek\8\toolbox\r2014a')  % Add Mosek to path
 addpath('optispline')                               % Add optispline to path
-addpath(genpath('lc_toolbox'))                      % Add LCToolbox to path
-cd resmile                                          % We assume that the ReSMILE is in a subdirectory "resmile"
-resmile_mkpath                                      % Add ReSMILE to path
-cd ..                                               % Go back to previous directory
+addpath(genpath('lc_toolbox'))                      % Add LCToolbox (with the ReSMILE) to path
 ss                                                  % Test for Control System Toolbox, should print "Empty state-space model."
 mosekdiag                                           % Test for Mosek, should print "mosekopt is working correctly." in the last line
 casadi.MX                                           % Test for CasADi, should print "0x0" if CasADi is working correctly
 sdpvar                                              % Test for YALMIP, should print "Linear scalar (real, 1 variable)" in the first line
 IOSystem                                            % Test for LCToolbox, should not print anything, should run without an error.
+Resmile                                             % Test for Resmile, should print "Resmile with properties:"
 ```
 
 ## Quickstart
@@ -41,32 +40,32 @@ We want to create a B-spline interpolated model of an overhead crane with a low 
 
 Load state-space models coresponding to an overhead crane:
 
-```matlab
+```m
 rsm = Resmile(Resmile.dataset_oc); 
 ```
 
 Bring these state-space models to the same basis:
 
-```matlab
+```m
 rsm.make_coherent
 ```
 
 Create a B-spline interpolated model from the state-space matrices, and figure out which knots to remove:
 
-```matlab
+```m
 rsm.fit_resmile
 ```
 
 Create simplified model, prepare for plotting (analyze step) and plot the splines:
 
-```matlab
+```m
 rsm.simplify
 rsm.analyze
 rsm.plot(Resmile.PL_TABS_SPLINES)
 ```
 
 Plot the FRFs:
-```matlab
+```m
 rsm.plot(Resmile.PL_TABS_FRF)
 ```
 
