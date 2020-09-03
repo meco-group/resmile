@@ -1,0 +1,36 @@
+function output=dataset_oc
+    % Load model of an overhead crane. 
+    % The input of the system is the velocity of the cart, the output is the load position.
+
+    output = struct;
+    %apply_balreal: it will be true by default on the level of the class, so no need to set it here anymore
+    training_model_info={ ...
+        {'crane_L025.mat',   0.25   }, ...
+        {'crane_L02988.mat', 0.2988 }, ...
+        {'crane_L03298.mat', 0.3298 }, ...
+        {'crane_L03660.mat', 0.3660 }, ... 
+        {'crane_L04084.mat', 0.4084 }, ...
+        {'crane_L04587.mat', 0.4587 }, ... % {'crane_L05.mat',    0.5    }, ... %removed outlier data, probably because of bad measurement
+        {'crane_L05918.mat', 0.5918 }, ...
+        {'crane_L08.mat',    0.8    }  ...
+    };
+    validation_model_info={ ...
+        {'crane_L02719.mat', 0.2719 }, ...
+        {'crane_L06811.mat', 0.6811 }  ...
+    };
+    model_base_path = ''; %`datasets` directoy should be on path instead
+
+    [output.training_models, output.training_sched_params] = Resmile.load_meco_models(training_model_info,model_base_path);
+    [output.validation_models, output.validation_sched_params] = Resmile.load_meco_models(validation_model_info,model_base_path);
+        
+    output.bode_frequencies = load([model_base_path 'crane_L025.mat']);
+    output.bode_frequencies = output.bode_frequencies.frequency; %we can take that from any of the mat files
+    output.bode_frequencies = logspace(log10(2),log10(10),100);
+   
+%  The scheduling parameters to be plotted can be different from those that we have models for.  
+%  In this case we can use `display_sched_params` and set `use_display_sched_params` to `true`.  
+%  - This will improve the plotting of some diagrams for the overhead crane system.
+%  - For the MSD system, this makes no sense as we can generate an accurate model for each scheduling parameter, so `use_display_sched_params` should be `false`.
+    output.use_display_sched_params = true;
+    output.display_sched_params = linspace(0.25,0.8,100);
+
