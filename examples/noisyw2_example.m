@@ -1,4 +1,4 @@
-gre% Example for a dataset for which `fit_resmile` is not more efficient than
+% Example for a dataset for which `fit_resmile` is not more efficient than
 % the `fit_regsimple`. Both of them lead to removing the same knots.
 
 rsm=Resmile(load('dsrand_noisyw2'));

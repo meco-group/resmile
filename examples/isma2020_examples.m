@@ -1,4 +1,4 @@
-% This scripts is a companion for the paper:
+% This script corresponds to the paper:
 % A. Retzler; J. Swevers; J. Gillis; Zs. Kollar, "ReSMILE: trading off model 
 % accuracy and complexity for linear parameter-varying systems", 
 % Proceedings of ISMA2020 and USD2020, Leuven, 2020
