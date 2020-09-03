@@ -1,6 +1,6 @@
 # ReSMILE
 
-A toolbox for LPV system indentification using the Regularized State-space Model Interpolation of Local Estimates (ReSMILE).
+A toolbox for LPV system indentification using the Regularized State-space Model Interpolation of Local Estimates (ReSMILE) method.
 
 ## Installing & requirements
 
@@ -20,7 +20,7 @@ addpath('.','examples','lib','datasets')
 Download all prerequisites to a folder, and also clone this repo into it.  
 A script that you can use to add prequisites to path and check that they work:
 
-```octave
+```matlab
 addpath(genpath('yalmip'))                          % Add YALMIP to path
 addpath('C:\Program Files\Mosek\8\toolbox\r2014a')  % Add Mosek to path
 addpath('optispline')                               % Add optispline to path
@@ -41,32 +41,32 @@ We want to create a B-spline interpolated model of an overhead crane with a low 
 
 Load state-space models coresponding to an overhead crane:
 
-```octave
+```matlab
 rsm = Resmile(Resmile.dataset_oc); 
 ```
 
 Bring these state-space models to the same basis:
 
-```octave
+```matlab
 rsm.make_coherent
 ```
 
 Create a B-spline interpolated model from the state-space matrices, and figure out which knots to remove:
 
-```octave
+```matlab
 rsm.fit_resmile
 ```
 
 Create simplified model, prepare for plotting (analyze step) and plot the splines:
 
-```octave
+```matlab
 rsm.simplify
 rsm.analyze
 rsm.plot(Resmile.PL_TABS_SPLINES)
 ```
 
 Plot the FRFs:
-```octave
+```matlab
 rsm.plot(Resmile.PL_TABS_FRF)
 ```
 
