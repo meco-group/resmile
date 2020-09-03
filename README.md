@@ -1,4 +1,4 @@
-# ReSMILE 😄
+# ReSMILE
 
 A toolbox for LPV system indentification using the Regularized State-space Model Interpolation of Local Estimates (ReSMILE).
 
