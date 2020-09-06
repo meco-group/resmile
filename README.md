@@ -6,9 +6,9 @@ A toolbox for LPV system indentification using the Regularized State-space Model
 
 - MathWorks MATLAB (Tested versions: R2019b on GNU/Linux, R2020a on Windows 10)
 - MathWorks Control System Toolbox for MATLAB
-- [OptiSpline release v0.1](https://github.com/meco-group/optispline/releases/tag/v0.1) package contains both OptiSpline and CasADi, and is used to formulate and solve optimization problems involving B-splines
-- [YALMIP R20200116](https://github.com/yalmip/YALMIP/releases/tag/R20200116) is used by OptiSpline to parse optimization problems involving B-splines
-- [Mosek 8.0.0.60](https://www.mosek.com/downloads/8.0.0.60/) is used as the solver for SOCP problems
+- [OptiSpline (release v0.2)](https://github.com/meco-group/optispline/releases/tag/v0.2) package contains both OptiSpline and CasADi, and is used to formulate and solve optimization problems involving B-splines
+- [YALMIP (commit db31920)](https://github.com/yalmip/YALMIP/tree/db319203c264b580c7409cf70073d54dfe792704) is used by OptiSpline to parse optimization problems involving B-splines
+- [Mosek (version 8.0.0.60)](https://www.mosek.com/downloads/8.0.0.60/) is used as the solver for SOCP problems
 - (optional) [LC Toolbox](https://github.com/meco-group/lc_toolbox) can be used to work with the results of the ReSMILE, contains LPV control design routines. It contains the `resmile` repo as a Git submodule.
 
 ## How to set up
