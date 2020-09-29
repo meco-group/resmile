@@ -2,6 +2,10 @@
 
 A toolbox for LPV system indentification using the Regularized State-space Model Interpolation of Local Estimates (ReSMILE) method.
 
+For a quick introduction, watch the talk about this project:
+
+<a href="https://www.youtube.com/watch?v=S0BgZDxFrFQ">![youtube](@Resmile/images/yttalk.png?raw=true)</a>
+
 ## Requirements
 
 - MathWorks MATLAB (Tested versions: R2019b on GNU/Linux, R2020a on Windows 10)
