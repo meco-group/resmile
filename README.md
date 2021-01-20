@@ -75,25 +75,25 @@ rsm.plot(Resmile.PL_TABS_FRF)
 
 ## Paper <a name="isma2020" />
 
-We have published a paper on the topic, which is available in the ISMA 2020 preliminary proceedings.  
+We have published a paper on the topic, which is available in the [ISMA 2020 proceedings](http://past.isma-isaac.be/isma2020/proceedings/program/).  
 You can find the related example code in `examples/isma2020_examples.m`.  
 The paper also references to other scripts in the `examples` directory.  
 
-<!--
-How to cite the toolbox:
+Some things explained in the paper: why to use B-spline based LPV models, background on B-splines (formal definition and how to imagine them), background on the formulas behind ReSMILE and how they were developed.
+
+If you this project in your academic work, please cite the following paper:
 
 ```bibtex
 @inproceedings{resmile_isma2020,
-  author={András Retzler and Jan Swevers and Joris Gillis and Zsolt Kollár},
-  booktitle={Proceedings of ISMA2020 and USD2020}, 
-  title={{ReSMILE}: trading off model accuracy and complexity for linear parameter-varying systems}, 
-  year={2020},
-  pages={}
+    journal = {Proceedings of ISMA2020},
+    pages = {2203--2217},
+    publisher = {KU Leuven; Leuven},
+    isbn = {9789082893113},
+    year = {2020},
+    title = {ReSMILE: trading off model accuracy and complexity for linear parameter-varying systems},
+    author = {Retzler, András and Swevers, Jan and Gillis, Joris and Kollár, Zsolt},
 }
 ```
--->
-
-Some things explained in the paper: why to use B-spline based LPV models, background on B-splines (formal definition and how to imagine them), background on the formulas behind ReSMILE and how they were developed.
 
 ## Suggested identification workflow
 
