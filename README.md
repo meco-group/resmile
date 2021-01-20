@@ -81,7 +81,7 @@ The paper also references to other scripts in the `examples` directory.
 
 Some things explained in the paper: why to use B-spline based LPV models, background on B-splines (formal definition and how to imagine them), background on the formulas behind ReSMILE and how they were developed.
 
-If you this project in your academic work, please cite the following paper:
+If you this project in your academic work, please cite the following [paper](https://limo.libis.be/primo-explore/fulldisplay?docid=LIRIAS3224869&context=L&vid=Lirias&lang=en_US&search_scope=Lirias&adaptor=Local%20Search%20Engine&tab=default_tab&query=any,contains,retzler&offset=0):
 
 ```bibtex
 @inproceedings{resmile_isma2020,
