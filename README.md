@@ -75,13 +75,13 @@ rsm.plot(Resmile.PL_TABS_FRF)
 
 ## Paper <a name="isma2020" />
 
-We have published a paper on the topic, which is available in the [ISMA 2020 proceedings](http://past.isma-isaac.be/isma2020/proceedings/program/).  
+We have published a paper on the topic, which is available in the [ISMA 2020 proceedings](https://past.isma-isaac.be/downloads/isma2020/proceedings/Contribution_708_proceeding_3.pdf).  
 You can find the related example code in `examples/isma2020_examples.m`.  
 The paper also references to other scripts in the `examples` directory.  
 
 Some things explained in the paper: why to use B-spline based LPV models, background on B-splines (formal definition and how to imagine them), background on the formulas behind ReSMILE and how they were developed.
 
-If you this project in your academic work, please cite the following [paper](https://limo.libis.be/primo-explore/fulldisplay?docid=LIRIAS3224869&context=L&vid=Lirias&lang=en_US&search_scope=Lirias&adaptor=Local%20Search%20Engine&tab=default_tab&query=any,contains,retzler&offset=0):
+If you this project in your academic work, please cite the following [paper](https://past.isma-isaac.be/downloads/isma2020/proceedings/Contribution_708_proceeding_3.pdf):
 
 ```bibtex
 @inproceedings{resmile_isma2020,
